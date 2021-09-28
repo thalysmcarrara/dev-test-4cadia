@@ -19,9 +19,13 @@ const signup = async (user) => {
 
   if (!result.acknowledged) return false;
 
+  const { name, email, releaseDate } = user;
+  
   return { user: {
     _id: result.insertedId.toString(),
-    ...user,
+    name,
+    email,
+    releaseDate,
   } };
 };
 

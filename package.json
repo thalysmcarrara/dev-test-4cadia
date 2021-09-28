@@ -4,7 +4,7 @@
   "description": "development test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./src/_tests/**/*$NAME*.{test,spec}.js --exit"
   },
   "repository": {
     "type": "git",

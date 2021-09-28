@@ -13,7 +13,8 @@ describe('testing route /register', () => {
   const user = {
     name: 'John doe',
     email: 'johndoe@gmail.com',
-    password: 'Mysupersecretpassword123'
+    password: 'Mysupersecretpassword123',
+    releaseDate: '2021-09-28T15:56:44.332Z'
   }
   
   let DBserver = new MongoMemoryServer();
@@ -35,25 +36,7 @@ describe('testing route /register', () => {
     await mongoConnect.getConnection.restore();
   })
 
-  describe('when the user already exists', () => {
-    const userMock = {
-      name: 'John doe',
-      email: 'johndoe@gmail.com',
-      password: 'Mysupersecretpassword123',
-      releaseDate: '2021-09-28T03:55:56.905Z'
-    }
-
-    before(async () => {
-      await connectionMock.collection(USERS).insertOne(userMock);
-    });
-
-    it('returns false', async () => {
-      const result = await userModel.signup(user);
-      expect(result).to.be.equal(false);
-    });
-  });
-
-  describe('when the user does not exist', () => {
+  describe('when the user is successfully inserted', () => {
     beforeEach(async () => {
       await connectionMock.collection(USERS).deleteMany({});
     });
@@ -69,7 +52,7 @@ describe('testing route /register', () => {
       expect(result.user).to.be.a('object');
     })
 
-    it('the user property needs to have the fields e-mail, _id, name, releaseDate', async () => {
+    it('the user property needs to have the properties e-mail, _id, name, releaseDate', async () => {
       const result = await userModel.signup(user);
       expect(result.user).to.have.a.property('name');
       expect(result.user).to.have.a.property('email');

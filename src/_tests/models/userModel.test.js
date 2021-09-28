@@ -12,9 +12,9 @@ describe('testing route /register', () => {
   }
 
   describe('when the user already exists', () => {
-    it('returns a null value', async () => {
+    it('returns false', async () => {
       const result = await userModel.create(user);
-      expect(result).to.be.a('null');
+      expect(result).to.be.equal(false);
     });
   });
 

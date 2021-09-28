@@ -1,0 +1,19 @@
+{
+  "name": "dev-test-4cadia",
+  "version": "1.0.0",
+  "description": "development test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thalysmcarrara/dev-test-4cadia.git"
+  },
+  "author": "Thalys Matias Carrara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thalysmcarrara/dev-test-4cadia/issues"
+  },
+  "homepage": "https://github.com/thalysmcarrara/dev-test-4cadia#readme"
+}

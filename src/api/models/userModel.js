@@ -1,9 +1,9 @@
-const { getConnection } = require('./connection');
+const mongoConnection = require('./connection');
 
-const USERS = 'users'
+const USERS = 'users';
 
 const findByEmail = async (email) => {
-  const db = await getConnection();
+  const db = await mongoConnection.getConnection();
 
   const filter = { email };
 
@@ -12,10 +12,10 @@ const findByEmail = async (email) => {
   return result;
 };
 
-const signup = async ({ name, email, password}) => {
+const signup = async ({ name, email, password }) => {
   const exists = await findByEmail(email);
 
-  if(exists) return false;
+  if (exists) return false;
 
   const releaseDate = new Date();
 
@@ -23,23 +23,21 @@ const signup = async ({ name, email, password}) => {
     name,
     email,
     password,
-    releaseDate
-  }
+    releaseDate,
+  };
 
-  const db = await getConnection();
+  const db = await mongoConnection.getConnection();
   
   const result = await db.collection(USERS).insertOne(userWithDate); 
 
-  if(!result.acknowledged) return false
+  if (!result.acknowledged) return false;
 
-  const user = {
+  return { user: {
     name,
     email,
     releaseDate,
     _id: result.insertedId.toString(),
-  }
-
-  return { user };
+  } };
 };
 
 module.exports = { signup, findByEmail };

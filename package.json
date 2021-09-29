@@ -4,7 +4,8 @@
   "description": "development test",
   "main": "./src/api/server.js",
   "scripts": {
-    "test": "mocha ./src/_tests/**/*$NAME*.{test,spec}.js --exit"
+    "test": "mocha ./src/_tests/**/*$NAME*.{test,spec}.js --exit",
+    "start": "node ."
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/thalysmcarrara/dev-test-4cadia#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "mongodb": "^4.1.2"
   },
   "devDependencies": {

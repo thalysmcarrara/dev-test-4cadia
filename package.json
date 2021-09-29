@@ -2,7 +2,7 @@
   "name": "dev-test-4cadia",
   "version": "1.0.0",
   "description": "development test",
-  "main": "index.js",
+  "main": "./src/api/server.js",
   "scripts": {
     "test": "mocha ./src/_tests/**/*$NAME*.{test,spec}.js --exit"
   },

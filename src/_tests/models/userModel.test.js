@@ -9,7 +9,7 @@ const userModel = require('../../api/models/userModel');
 const USERS = 'users'
 const DBNAME = 'openbank'
 
-describe('testing route /register', () => {
+describe('testing the model layer of the /register route', () => {
   const user = {
     name: 'John doe',
     email: 'johndoe@gmail.com',

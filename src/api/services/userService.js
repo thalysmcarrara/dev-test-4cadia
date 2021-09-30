@@ -1,11 +1,22 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+
+require('dotenv').config();
+
 const userModel = require('../models/userModel');
-const { emailConflict, internalError } = require('./exceptions');
+
+const { emailConflict, internalError, wrongEmailOrPassword } = require('./exceptions');
 
 const encryptPassword = async (password) => {
   const saltRounds = 10;
   const hash = await bcrypt.hash(password, saltRounds);
   return hash;
+};
+
+const checkUser = async (password, hash = '') => {
+  const match = await bcrypt.compare(password, hash);
+
+  return match;
 };
 
 const signup = async ({ name, email, password }) => {
@@ -31,4 +42,24 @@ const signup = async ({ name, email, password }) => {
   return result;
 };
 
-module.exports = { signup };
+const signIn = async ({ email, password }) => {
+  const user = await userModel.findByEmail(email);
+  
+  if (!checkUser(password, user.password)) return wrongEmailOrPassword;
+
+  const { _id } = user;
+
+  const payload = {
+    _id,
+  };
+
+  const options = { expiresIn: '7d' };
+
+  const { SECRET } = process.env;
+
+  const token = jwt.sign(payload, SECRET, options);
+
+  return { token };
+};
+
+module.exports = { signup, signIn };

@@ -11,4 +11,10 @@ module.exports = {
       code: 500,
     },
   },
+  wrongEmailOrPassword: {
+    error: {
+      message: 'Incorrect username or password',
+      code: 401,
+    },
+  },
 };

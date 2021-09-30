@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 const { validateSignupForm } = require('../middlewares');
-const userController = require('../controllers/userController');
+const signupController = require('../controllers/signupController');
 
 router.post('/', [
   validateSignupForm,
-  userController.signup,
+  signupController.signup,
 ]);
 
 module.exports = router;

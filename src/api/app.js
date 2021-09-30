@@ -7,8 +7,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded());
 
-const userRouter = require('./routers/userRouter');
+const signupRouter = require('./routers/signupRouter');
 
-app.use('/register', userRouter);
+app.use('/register', signupRouter);
 
 module.exports = app;

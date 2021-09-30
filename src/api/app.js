@@ -11,4 +11,8 @@ const signupRouter = require('./routers/signupRouter');
 
 app.use('/register', signupRouter);
 
+const signinRouter = require('./routers/signinRouter');
+
+app.use('/login', signinRouter);
+
 module.exports = app;

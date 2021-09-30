@@ -45,7 +45,9 @@ const signup = async ({ name, email, password }) => {
 const signIn = async ({ email, password }) => {
   const user = await userModel.findByEmail(email);
   
-  if (!checkUser(password, user.password)) return wrongEmailOrPassword;
+  const match = await checkUser(password, user.password);
+
+  if (!match) return wrongEmailOrPassword;
 
   const { _id } = user;
 

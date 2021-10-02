@@ -13,7 +13,7 @@ module.exports = {
   },
   wrongEmailOrPassword: {
     error: {
-      message: 'Incorrect username or password',
+      message: 'Incorrect email or password',
       code: 401,
     },
   },

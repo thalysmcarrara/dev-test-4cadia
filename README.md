@@ -26,6 +26,7 @@ thinking about the deadline of 7 days and the scope of tasks, I organized the ta
 
 ![Known Vulnerabilities](https://snyk.io/test/github/thalysmcarrara/dev-test-4cadia/badge.svg)
 
+<br/>
 
 ### build with:
 > javascript
@@ -36,6 +37,7 @@ thinking about the deadline of 7 days and the scope of tasks, I organized the ta
 
 > mongoDB
 
+<br/>
 
 ### architecture:
   - MVCS
@@ -44,6 +46,8 @@ thinking about the deadline of 7 days and the scope of tasks, I organized the ta
 
 :heavy_exclamation_mark: you can see the API routes documentation [here](https://app.swaggerhub.com/apis-docs/thalysmcarrara/OpenBanking/1.0.0) with more details:heavy_exclamation_mark:
 
+<br/>
+
 ### external libraries used:
   - joi: Used for creating schemas to validate the request body
 
@@ -51,11 +55,17 @@ thinking about the deadline of 7 days and the scope of tasks, I organized the ta
   
   - jsonwebtoken: Used to generate and validate tokens
 
+<br/>
+
+- [link to deployed API](https://apidevtest4cadia.herokuapp.com/)
+
 ---
 
 ### __FRONTEND OPEN BANKING 4CADIA__
 
 ![Known Vulnerabilities](https://snyk.io/test/github/thalysmcarrara/frontend-devtest4acadia/badge.svg)
+
+<br/>
 
 ### build with:
 > Javascript
@@ -66,9 +76,13 @@ thinking about the deadline of 7 days and the scope of tasks, I organized the ta
 
 > React
 
+<br/>
+
 ### Design:
   [here](https://drive.google.com/drive/folders/1FGydKaO-iF2fRxpkgCwFkAvsndZc8nJS?usp=sharing) are the sketches created to use as a reference when developing the frontend.
 
- - [repository](https://github.com/thalysmcarrara/frontend-devtest4acadia)
+<br/>
 
- - [link to deployed application](https://openbankdevtest.herokuapp.com/)
+- [repository](https://github.com/thalysmcarrara/frontend-devtest4acadia)
+
+- [link to deployed application](https://openbankdevtest.herokuapp.com/)

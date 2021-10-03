@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-const userController = require('../../api/controllers/userController');
+const userController = require('../../api/controllers/signupController');
 const userService = require('../../api/services/userService');
 
 describe('testing the controller layer of the /register route', () => {
